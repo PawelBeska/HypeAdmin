@@ -1,0 +1,92 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #242935 inset;
+    transition: background-color 5s ease-in-out 0s;
+    -webkit-text-fill-color: #838d91 !important;
+}
+
+table.dataTable tbody tr {
+    background-color: #242935;
+}
+
+.table {
+    border: none;
+}
+
+table.dataTable.no-footer {
+    border-bottom: none;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    background: #3f4855!important;
+}
+.paginate_button{
+    background: #3f4855;
+    color: white!important;
+    border: none!important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+
+    color: white !important;
+
+    background-color: white !important;
+    background: #037afb !important;
+    margin-top: 5px !important;
+}
+
+.table .btn {
+    font-size: 12px;
+    color: white;
+    opacity: 70%;
+}
+.table .btn:hover {
+    font-size: 12px;
+    opacity: 100%;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    background: #3f4855;
+    color: white!important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: #4f5566;
+    opacity: 80%;
+    color: white;
+}
+.dataTables_wrapper .dataTables_processing {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 30%;
+    height: 40px;
+    margin-left: -20%;
+    margin-top: -25px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    background:none;
+}
+.hidden{
+    display: none;
+}
+#loader{
+    display: block;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+.hidden{
+    display: none;
+}
+.alert{
+    margin-bottom: 25px;
+}
+option:checked {
+    background: #fff;
+}
