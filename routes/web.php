@@ -18,11 +18,8 @@ Route::group(['middleware' => ['admin']], function () {
         Route::resource('users', 'UserController');
         Route::resource('groups', 'GroupController');
         Route::resource('permissions', 'PermissionController');
-        Route::resource('genres', 'GenreController');
         Route::prefix('settings')->name('settings.')->group(function () {
             Route::resource('main','SettingsController');
-            Route::resource('movies','SettingsController');
-            Route::resource('series','SettingsController');
             Route::resource('users','SettingsController');
             Route::resource('groups','SettingsController');
             Route::resource('administration','SettingsController');

@@ -14,12 +14,6 @@
                         <a href="ui-alerts.html">Ogólne</a>
                     </li>
                     <li>
-                        <a href="ui-badge.html">Filmy</a>
-                    </li>
-                    <li>
-                        <a href="ui-breadcrumb.html">Seriale</a>
-                    </li>
-                    <li>
                         <a href="ui-buttons.html">Użytkownicy</a>
                     </li>
                     <li>
@@ -43,40 +37,6 @@
                 <a href="{{route('admin.permissions.index')}}" redirect="true"><i class="material-icons">gavel</i>Permisje</a>
             </li>
             <li class="sidebar-title">
-                Zarządzanie treścią
-            </li>
-            <li>
-                <a href="{{route('admin.genres.index')}}" redirect="true"><i class="material-icons">note</i>Gatunki</a>
-            </li>
-            <li>
-                <a href=""><i class="material-icons">movie</i>Filmy<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="ui-buttons.html" redirect="true">Filmy</a>
-                    </li>
-                    <li>
-                        <a href="ui-buttons.html" redirect="true">Komentarze</a>
-                    </li>
-                    <li>
-                        <a href="ui-card.html" redirect="true">Linki</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href=""><i class="material-icons">local_movies</i>Seriale<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="ui-buttons.html" redirect="true">Seriale</a>
-                    </li>
-                    <li>
-                        <a href="ui-buttons.html" redirect="true">Komentarze</a>
-                    </li>
-                    <li>
-                        <a href="ui-card.html" redirect="true">Linki</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="sidebar-title">
                 Zarządzanie serwisem
             </li>
             <li>
@@ -85,12 +45,6 @@
                 <ul class="sub-menu">
                     <li>
                         <a href="{{route('admin.settings.main.index')}}" redirect="true">Ogólne</a>
-                    </li>
-                    <li>
-                        <a href="{{route('admin.settings.movies.index')}}" redirect="true">Filmy</a>
-                    </li>
-                    <li>
-                        <a href="{{route('admin.settings.series.index')}}" redirect="true">Seriale</a>
                     </li>
                     <li>
                         <a href="{{route('admin.settings.users.index')}}" redirect="true">Użytkownicy</a>
@@ -102,47 +56,6 @@
                         <a href="{{route('admin.settings.administration.index')}}" redirect="true">Administracyjne</a>
                     </li>
                 </ul>
-            </li>
-            <li class="sidebar-title">
-                Other
-            </li>
-            <li>
-                <a href=""><i class="material-icons">star_border</i>Pages<i class="material-icons has-sub-menu">keyboard_arrow_left</i></a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="404.html">404</a>
-                    </li>
-                    <li>
-                        <a href="500.html">500</a>
-                    </li>
-                    <li>
-                        <a href="sign-in.html">Sign In</a>
-                    </li>
-                    <li>
-                        <a href="sign-up.html">Sign Up</a>
-                    </li>
-                    <li>
-                        <a href="lock-screen.html">Lock Screen</a>
-                    </li>
-                    <li>
-                        <a href="coming-soon.html">Coming Soon</a>
-                    </li>
-                    <li>
-                        <a href="invoice.html">Invoice</a>
-                    </li>
-                    <li>
-                        <a href="pricing-tables.html">Pricing Tables</a>
-                    </li>
-                    <li>
-                        <a href="help-center.html">Help Center</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="material-icons">bookmark_border</i>Documentation</a>
-            </li>
-            <li>
-                <a href="#"><i class="material-icons">access_time</i>Change Log</a>
             </li>
         </ul>
     </div>
