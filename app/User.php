@@ -29,11 +29,11 @@ class User extends Authenticatable
     ];
     public function group()
     {
-        return $this->hasOne('App\Group', 'id', 'group');
+        return $this->hasOne('App\Group', 'id', 'group_id');
     }
     public function permissions()
     {
-        return $this->hasOne('App\Group', 'id', 'group')->first()->permissions();
+        return $this->hasOne('App\Group', 'id', 'group_id')->first()->permissions();
     }
     public function hasPermission($permission)
     {

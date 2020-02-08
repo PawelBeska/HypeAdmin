@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 class Controller extends BaseController
@@ -14,7 +15,6 @@ class Controller extends BaseController
 
     public function index()
     {
-
         $name = substr(Route::currentRouteName(), strpos(Route::currentRouteName(), '.') + 1);
         if (substr_count($name, '.') >= 2) {
             $name = substr($name, 0, strrpos($name, '.'));
