@@ -7,13 +7,13 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0px 1000px #242935 inset;
+    -webkit-box-shadow: 0 0 0px 1000px #191a20 inset;
     transition: background-color 5s ease-in-out 0s;
     -webkit-text-fill-color: #838d91 !important;
 }
 
 table.dataTable tbody tr {
-    background-color: #242935;
+    background-color: #191a20;
 }
 
 .table {
@@ -24,21 +24,14 @@ table.dataTable.no-footer {
     border-bottom: none;
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
-    background: #3f4855!important;
+    background: #191a20!important;
 }
 .paginate_button{
     background: #3f4855;
     color: white!important;
     border: none!important;
 }
-.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-
-    color: white !important;
-
-    background-color: white !important;
-    background: #037afb !important;
-    margin-top: 5px !important;
-}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {color: white !important;background-color: white !important;background: #25ca7f !important;margin-top: 5px !important;}
 
 .table .btn {
     font-size: 12px;
@@ -85,7 +78,7 @@ table.dataTable.no-footer {
     display: none;
 }
 .alert{
-    margin-bottom: 25px;php
+    margin-bottom: 25px;
 }
 option:checked {
     background: #fff;

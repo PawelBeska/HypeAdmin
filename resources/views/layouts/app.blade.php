@@ -1,86 +1,98 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive Admin Dashboard Template">
+    <meta name="keywords" content="admin,dashboard">
+    <meta name="author" content="stacks">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+    <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <!-- Title -->
+    <title>HypeAdmin | Admin Panel</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+    <link href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="{{URL::asset('assets/admin/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('assets/admin/plugins/font-awesome/css/all.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('assets/admin/plugins/toastr/toastr.min.css')}}" rel="stylesheet">
+
+
+    <!-- Theme Styles -->
+    <link href="{{URL::asset('assets/admin/css/lime.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('assets/admin/css/themes/admin2.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('assets/admin/css/custom.css')}}" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js')}}" for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js')}}"" doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="{{URL::asset('assets/admin/plugins/jquery/jquery-3.1.0.min.js')}}"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    @if(\Illuminate\Support\Facades\Auth::user()->hasPermission('admin'))
-                                        <a class="dropdown-item" href="{{ route('admin.index') }}">
-                                            Panel Administratora
-                                        </a>
-                                    @endif()
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+<body class="login-page err-500">
+<div class='loader'>
+    <div class='spinner-grow text-primary' role='status'>
+        <span class='sr-only'>Ładowanie...</span>
     </div>
+</div>
+
+<div id="progressbar"></div>
+
+
+<div class='loader'>
+    <div class='spinner-grow text-primary' role='status'>
+        <span class='sr-only'>Loading...</span>
+    </div>
+</div>
+<div class="container">
+    @yield('content')
+</div>
+
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.fn.dataTable.ext.classes.sFilterInput = 'form-control';
+    $.fn.dataTable.ext.classes.sLengthSelect = 'custom-select form-control';
+</script>
+
+<!-- Javascripts -->
+<script src="{{URL::asset('assets/admin/plugins/jquery/jquery-3.1.0.min.js')}}"></script>
+<script src="{{URL::asset('assets/admin/plugins/bootstrap/popper.min.js')}}"></script>
+<script src="{{URL::asset('assets/admin/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{URL::asset('assets/admin/plugins/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+<script src="{{URL::asset('assets/admin/js/lime.min.js')}}"></script>
+
+
+
+<!-- Javascripts -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+<script src="{{URL::asset('assets/admin/plugins/bootstrap/popper.min.js')}}"></script>
+<script src="{{URL::asset('assets/admin/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{URL::asset('assets/admin/plugins/jquery-slimscroll/jquery.slimscroll.min.js')}}"></script>
+<script src="{{URL::asset('assets/admin/plugins/chartjs/chart.min.js')}}"></script>
+<script src="{{URL::asset('assets/admin/plugins/apexcharts/dist/apexcharts.min.js')}}"></script>
+<script src="{{URL::asset('assets/admin/plugins/toastr/toastr.min.js')}}"></script>
+<script src="{{URL::asset('assets/admin/js/lime.min.js')}}"></script>
+<script src="{{URL::asset('assets/admin/js/pages/dashboard_admin2.js')}}"></script>
+<script>
+    init();
+</script>
 </body>
 </html>
+

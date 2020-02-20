@@ -146,5 +146,7 @@ return [
     */
 
     'attributes' => [
+        'password' => 'Hasło',
+        'password_confirm' => 'Potwierdzenie hasła',
     ],
 ];

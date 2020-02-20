@@ -1,12 +1,12 @@
 /* Admin 2 Theme */
 
 body {
-    background: #242935;
     color: #747985;
+    background-color: #121319f7;
 }
 
 .loader {
-    background: #222531;
+    background: #121319;
 }
 
 
@@ -34,12 +34,12 @@ body {
 }
 
 .dropdown-menu {
-    background: #181A25!important;
+    background: #191a20!important;
 }
 
 .lime-header .navbar-nav .dropdown .dropdown-menu li a:hover,
 .dropdown-menu a:hover {
-    background: #242736;
+    background: #14151a;
     color: #b1b9bd;
 }
 
@@ -50,21 +50,21 @@ body {
 }
 
 .lime-header .navbar-nav .dropdown .dropdown-menu li.divider {
-    background: #242736;
+    background: #14151a;
 }
 
 .dropdown-divider {
-    border-top-color: #242736;
+    border-top-color: #14151a;
 }
 
 .lime-header .search input {
-    background: #2C3041;
+    background: #14151a;
 }
 
 .lime-header .search:hover input,
 .lime-header .search input:focus,
 .lime-header .search input:active {
-    background: #3c4054;
+    background: #14151a;
 }
 
 .search-results {
@@ -85,6 +85,7 @@ search-results .search-results-header a#closeSearch:hover {
 
 .lime-sidebar {
     background: #202431;
+    box-shadow: 0 3px 10px rgba(0,0, 0,.1);
 }
 
 .lime-sidebar .lime-sidebar-inner ul li a {
@@ -98,7 +99,7 @@ search-results .search-results-header a#closeSearch:hover {
 
 .lime-sidebar .lime-sidebar-inner ul li.active-page > a,
 .lime-sidebar .lime-sidebar-inner > ul > li > a.active:hover {
-    color: #037AFB;
+    color: #1d965f;
 }
 
 .lime-sidebar .lime-sidebar-inner ul li ul.sub-menu li a.active {
@@ -128,8 +129,8 @@ search-results .search-results-header a#closeSearch:hover {
 /* Components */
 
 .card {
-    background: #2C3041;
     box-shadow: 0 3px 10px rgba(0,0, 0,.1);
+    background-color: #14151a !important;
 }
 
 .card .card-body .card-title {
@@ -160,21 +161,21 @@ search-results .search-results-header a#closeSearch:hover {
 }
 
 .form-control {
-    background: #242935;
-    border-color: #3d4352;
+    background: #191a20;
+    border-color: #14151a;
 }
 
 .form-control:hover {
-    background: #242935;
-    border-color: #4f5566;
+    background: #191a20;
+    border-color: #14151a;
 }
 
 .form-control:focus {
-    border-color: #242935;
+    border-color: #14151a;
     box-shadow: none;
     color: #9ba0ab;
     box-shadow: 0 0 0 0.2rem rgba(3, 122, 251, 0.25);
-    background: #242935;
+    background: #191a20;
 }
 
 .custom-control-label::before {

@@ -5,9 +5,12 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\MessageBag;
 
 class RegisterController extends Controller
 {
@@ -30,7 +33,14 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
-
+    public function register(Request $request)
+    {
+        $message = new MessageBag();
+        $this->validator($request->all())->validate();
+        event(new Registered($user = $this->create($request->all())));
+        $message->add('success', 'Pomyślnie zarejestrowano!');
+        return  $this->registered($request, $user) ?: $message->jsonSerialize();
+    }
     /**
      * Create a new controller instance.
      *
@@ -60,7 +70,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return User
      */
     protected function create(array $data)
     {
@@ -69,5 +79,6 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
     }
 }
