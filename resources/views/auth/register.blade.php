@@ -27,7 +27,7 @@
                                 <input type="password" name="password_confirmation" required class="form-control" id="password_confirmation" placeholder="Powtórz Hasło">
                             </div>
                             <input type="submit" class="btn btn-primary float-right m-l-xxs" value="Zarejestruj się">
-                            <a href="/register" class="btn btn-secondary float-right">Zaloguj się</a>
+                            <a href="{{route('login')}}" class="btn btn-secondary float-right">Zaloguj się</a>
                         </form>
                     </div>
                 </div>

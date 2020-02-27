@@ -25,7 +25,7 @@
                             </div>
                             <a href="#" class="float-left forgot-link">Zapomniałeś hasła?</a>
                         <input type="submit" class="btn btn-primary float-right m-l-xxs" value="Zaloguj się">
-                            <a href="/register" class="btn btn-secondary float-right">Zarejestruj</a>
+                            <a href="{{route('register')}}" class="btn btn-secondary float-right">Zarejestruj</a>
                         </form>
                     </div>
                 </div>

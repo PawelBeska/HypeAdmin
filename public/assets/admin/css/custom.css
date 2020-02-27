@@ -83,3 +83,6 @@ table.dataTable.no-footer {
 option:checked {
     background: #fff;
 }
+#nprogress .bar {
+    background: #25CA7F !important;
+}

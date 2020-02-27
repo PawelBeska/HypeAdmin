@@ -24,7 +24,7 @@ class UserController extends Controller
         $input = $request->all();
         $message = new MessageBag();
         $message->add('success', 'Pomyślnie utworzono użytkownika!');
-        User::create(['name' => $input['name'], 'email' => $input['email'], 'password' => bcrypt($input['password']), 'group' => Group::default]);
+        User::create(['name' => $input['name'], 'email' => $input['email'], 'password' => bcrypt($input['password']), 'group_id' => $input['group']]);
         return $message->jsonSerialize();
     }
 
@@ -34,7 +34,7 @@ class UserController extends Controller
         if ($user = User::find($id)) {
             $input = $request->all();
             if (key_exists('password', $input)) $user->update(['password' => bcrypt($input['password'])]);
-            $user->update(['name' => $input['name'], 'email' => $input['email'], 'group' => $input['group']]);
+            $user->update(['name' => $input['name'], 'email' => $input['email'], 'group_id' => $input['group']]);
             $message->add('success', 'Pomyślnie edytowano użytkownika!');
         } else $message->add('error', 'Taki użytkownik nie istnieje!');
         return $message->jsonSerialize();

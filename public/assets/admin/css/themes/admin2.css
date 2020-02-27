@@ -68,7 +68,7 @@ body {
 }
 
 .search-results {
-    background: rgba(36, 41, 53, .975);
+    background: rgb(25, 26, 32);
 }
 
 .search-results .search-results-header a#closeSearch {

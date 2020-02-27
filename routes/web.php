@@ -14,7 +14,6 @@ Route::group(['middleware' => ['admin']], function () {
     Route::get('admin/', 'Admin\IndexController@index')->name('admin.index');
     Route::post('admin/', 'Admin\IndexController@store')->name('admin.index');
     Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
-
         Route::resource('users', 'UserController');
         Route::resource('groups', 'GroupController');
         Route::resource('permissions', 'PermissionController');

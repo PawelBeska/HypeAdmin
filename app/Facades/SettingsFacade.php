@@ -20,6 +20,7 @@ class SettingsFacade extends Facade
         if ($setting = Setting::where('name', $name)->first()) {
             return $setting->value;
         }
+        return false;
     }
 
     public static function getBoolean($name)
@@ -31,6 +32,7 @@ class SettingsFacade extends Facade
                 return false;
             }
         }
+        return false;
     }
 
     public static function all()
